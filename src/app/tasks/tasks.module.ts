@@ -8,6 +8,7 @@ import { MaterialModule } from '../material/material.module';
 import { PageCreateComponent } from './page-create/page-create.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomersModule } from '../customers/customers.module';
 
 const routes: Route[] = [{
   path: 'tasks',
@@ -22,6 +23,7 @@ const routes: Route[] = [{
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
+    CustomersModule,
     RouterModule.forChild(routes)
   ],
   declarations: [PageOverviewComponent, TaskListComponent, TaskListItemComponent, PageCreateComponent, TaskFormComponent]

@@ -1,8 +1,14 @@
 <mat-sidenav-container>
   <mat-sidenav-content>
     <app-task-list [tasks]="tasks" (change)="updateTask($event)"></app-task-list>
-    <a [routerLink]="['/tasks', {outlets: {side: ['create']}}]" skipLocationChange mat-fab><mat-icon>add</mat-icon></a>
+    <!-- <a [routerLink]="['/tasks', {outlets: {side: ['create']}}]" skipLocationChange mat-fab><mat-icon>add</mat-icon></a> -->
+    <a [routerLink]="['/tasks', {outlets: {side: ['create']}}]"  mat-fab><mat-icon>add</mat-icon></a>
   </mat-sidenav-content>
+  <mat-sidenav mode="side" opened="true">
+    <!-- <router-outlet name="side" (activate)="openSidebar = true" (deactivate)="openSidebar = false"></router-outlet> -->
+    <a [routerLink]="['/customers', {outlets: {side: ['profile']}}]">profile</a>
+
+  </mat-sidenav>
   <mat-sidenav mode="over" [opened]="openSidebar" position="end" disableClose="true">
     <router-outlet name="side" (activate)="openSidebar = true" (deactivate)="openSidebar = false"></router-outlet>
   </mat-sidenav>
